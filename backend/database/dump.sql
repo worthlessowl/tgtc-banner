@@ -1,25 +1,34 @@
-CREATE TABLE IF NOT EXISTS products (product_id SERIAL PRIMARY KEY, product_name TEXT, product_price INT, product_image TEXT, shop_name TEXT);
+CREATE TABLE IF NOT EXISTS products (banner_id SERIAL PRIMARY KEY, banner_name TEXT, banner_url TEXT, banner_imagesrc TEXT, banner_startdate INT,banner_enddate INT, banner_maxtier INT, banner_mintier INT,banner_minbalance INT,banner_maxbalance INT,banner_mintokopoint INT,banner_maxtokopoint INT,banner_isactive BIT);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('DVD Game Resident Evil 2 Remake', 250000, 'product1.jpg', 'Toko Game Makmur Jaya');
+INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+banner_mintokopoint,banner_maxtokopoint) VALUES('Waktu Indonesia Belanja', 'http://tokopedia.com', 'wib.jpg', 250120, 300120,'silver','gold',10,1000000,1,100000000);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('DVD Game Tekken 7 Original', 250000, 'product2.jpg', 'Toko Game Makmur Jaya');
+INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+banner_mintokopoint,banner_maxtokopoint) VALUES('Cashback Barang Elektronik', 'http://tokopediaelek.com', 'kom.jpg', 130120, 300120,'silver','gold',300,1000000,100,100000000);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('DVD Game Tomb Raider', 250000, 'product3.jpg', 'Toko Game Makmur Jaya');
+INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+banner_mintokopoint,banner_maxtokopoint) VALUES('Cashback OVO', 'http://tokopediaovo.com', 'ovo.jpg', 150120, 200120,'silver','gold',300,1000000,100,100000000);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('DVD Game Final Fantasy XV', 250000, 'product4.jpg', 'Toko Game Makmur Jaya');
+INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+banner_mintokopoint,banner_maxtokopoint) VALUES('Hari Skincare Indonesia', 'http://tokopediahsi.com', 'hsi.jpg', 150120, 250120,'silver','gold',300,1000000,100,100000000);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('DVD Game Call of Duty WWII', 250000, 'product5.jpg', 'Toko Game Makmur Jaya');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Novel Harry Potter and The Sorcerers Stone', 125000, 'product6.jpg', 'Toko Buku Sumber Selamat');
+CREATE TABLE IF NOT EXISTS users (user_id SERIAL PRIMARY KEY, user_name TEXT, user_email TEXT, user_balance INT, user_tokopoint INT, user_tier TEXT, user_bannerlist JSON);
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Novel Harry Potter and The Chamber of Secret', 125000, 'product7.jpg', 'Toko Buku Sumber Selamat');
+INSERT INTO user (user_name, user_email, user_balance, user_tokopoint, user_tier, user_bannerlist) 
+    VALUES('Rizky', "rizkycintadamai@gmail.com", 50000, 130000, 'Gold', '[1]');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Novel Harry Potter and The Prisoner of Azkaban', 125000, 'product8.jpg', 'Toko Buku Sumber Selamat');
+INSERT INTO user (user_name, user_email, user_balance, user_tokopoint, user_tier, user_bannerlist) 
+    VALUES('Agung', "agungcintadamai@gmail.com", 3000, 109000, 'Gold', '[3]');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Novel The Lord of The Rings - The Fellowship of The Ring', 125000, 'product9.jpg', 'Toko Buku Sumber Selamat');
+INSERT INTO user (user_name, user_email, user_balance, user_tokopoint, user_tier, user_bannerlist) 
+    VALUES('Bagas', "bagasanakmotor@gmail.com", 10, 70000, 'Silver', '[2]');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Novel The Lord of The Rings - The Two Towers', 125000, 'product10.jpg', 'Toko Buku Sumber Selamat');
+INSERT INTO user (user_name, user_email, user_balance, user_tokopoint, user_tier, user_bannerlist) 
+    VALUES('Asep', "asepmanurung@gmail.com", 67100, 1090, 'Silver', '[2]');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Gelang Perak - Aksesoris Remaja', 7500, 'product11.jpg', 'Toko Aksesoris Unik');
+INSERT INTO user (user_name, user_email, user_balance, user_tokopoint, user_tier, user_bannerlist) 
+    VALUES('Udin', "udinbaskara@gmail.com", 54520, 115020, 'Gold', '[4]');
 
-INSERT INTO products (product_name, product_price, product_image, shop_name) VALUES('Replika Cincin Emas - Aksesoris Remaja', 7500, 'product12.jpg', 'Toko Aksesoris Unik');
+
+
