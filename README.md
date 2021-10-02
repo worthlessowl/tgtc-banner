@@ -1,2 +1,1 @@
-# tgtc-banner
-TGTCxP Banner Project
+*TGTC Project*
