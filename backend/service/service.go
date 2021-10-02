@@ -3,8 +3,8 @@ package service
 import (
 	"errors"
 
-	"github.com/worthlessowl/tgtc-banner/backend/database"
-	"github.com/worthlessowl/tgtc-banner/backend/dictionary"
+	"github.com/radityaqb/tgtc/backend/database"
+	"github.com/radityaqb/tgtc/backend/dictionary"
 )
 
 func GetUser(paramID int) (*dictionary.User, error) {
