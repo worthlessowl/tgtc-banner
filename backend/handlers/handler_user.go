@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/radityaqb/tgtc/backend/dictionary"
-	"github.com/radityaqb/tgtc/backend/service"
+	"github.com/worthlessowl/tgtc-banner/backend/dictionary"
+	"github.com/worthlessowl/tgtc-banner/backend/service"
 )
 
 func AddUser(w http.ResponseWriter, r *http.Request) {
