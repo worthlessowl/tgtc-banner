@@ -1,35 +1,29 @@
 package handlers
 
 import (
-	"context"
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 
+	"github.com/gorilla/mux"
 	"github.com/radityaqb/tgtc/backend/dictionary"
-	"github.com/radityaqb/tgtc/backend/domain/product"
+	"github.com/radityaqb/tgtc/backend/service"
 )
 
-func Ping(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "pong\n")
-}
+func AddUser(w http.ResponseWriter, r *http.Request) {
 
-func AddProduct(w http.ResponseWriter, r *http.Request) {
-
-	var p dictionary.Product
+	var p dictionary.User
 
 	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		http.Error(w, "bad request", 400)
 		return
 	}
 
-	p = product.AddProduct(context.Background(), p)
-	fmt.Fprintf(w, fmt.Sprint("success, id product : ", p.ID))
+	p = User.AddUser(context.Background(), p)
+	fmt.Fprintf(w, fmt.Sprint("success, id User : ", p.ID))
 }
 
-func GetProduct(w http.ResponseWriter, r *http.Request) {
+func GetUser(w http.ResponseWriter, r *http.Request) {
 	idstring := r.URL.Query().Get("id")
 
 	idInt64, err := strconv.ParseInt(idstring, 10, 64)
@@ -37,7 +31,7 @@ func GetProduct(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	p, err := product.GetProduct(context.Background(), idInt64)
+	p, err := User.GetUser(context.Background(), idInt64)
 	if err != nil {
 		// log.Fatal(err)
 		fmt.Fprintf(w, err.Error())
@@ -51,27 +45,28 @@ func GetProduct(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(val))
 }
 
-func DeleteProduct(w http.ResponseWriter, r *http.Request) {
-	var p dictionary.Product
+func DeleteUser(w http.ResponseWriter, r *http.Request) {
+	var p dictionary.User
 
 	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		http.Error(w, "bad request", 400)
 		return
 	}
 
-	product.DeleteProduct(context.Background(), p.ID)
+	User.DeleteUser(context.Background(), p.ID)
 	fmt.Fprintf(w, "success")
 }
 
-func UpdateProduct(w http.ResponseWriter, r *http.Request) {
-	var p dictionary.Product
+func UpdateUser(w http.ResponseWriter, r *http.Request) {
+	var p dictionary.User
 
 	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		http.Error(w, "bad request", 400)
 		return
 	}
 
-	product.UpdateProduct(context.Background(), p)
+	User.UpdateUser(context.Background(), p)
 
 	fmt.Fprintf(w, "success")
+}
 }
