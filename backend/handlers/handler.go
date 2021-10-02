@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/radityaqb/tgtc/backend/dictionary"
-	"github.com/radityaqb/tgtc/backend/domain/product"
+	"github.com/worthlessowl/tgtc-banner/backend/dictionary"
+	"github.com/worthlessowl/tgtc-banner/backend/domain/product"
 )
 
 func Ping(w http.ResponseWriter, r *http.Request) {
