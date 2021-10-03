@@ -1,4 +1,4 @@
-module github.com/radityaqb/tgtc
+module github.com/worthlessowl/tgtc-banner
 
 go 1.17
 
