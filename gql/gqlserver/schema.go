@@ -139,6 +139,7 @@ func (s *SchemaWrapper) Init() error {
 					},
 					Resolve: s.dataResolver.UpdateBanner(),
 				},
+			},	
 		}),
 	})
 
@@ -149,5 +150,4 @@ func (s *SchemaWrapper) Init() error {
 	s.Schema = schema
 
 	return nil
- 	}
 }

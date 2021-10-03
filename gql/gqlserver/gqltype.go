@@ -4,8 +4,8 @@ import "github.com/graphql-go/graphql"
 
 var BannerType = graphql.NewObject(
 	graphql.ObjectConfig{
-		Name:		"Banner",
-		Description:"Banner Detail"
+		Name: "Banner",
+		Description: "Banner Detail",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
 				Type: graphql.Int,
@@ -46,8 +46,8 @@ var BannerType = graphql.NewObject(
 			"isactive": &graphql.Field{
 				Type: graphql.Boolean,
 			},
-		}
-	}
+		},
+	},
 )
 var UserType = graphql.NewObject(
 	graphql.ObjectConfig{

@@ -3,6 +3,7 @@ package gqlserver
 import (
 	"github.com/graphql-go/graphql"
 	"github.com/radityaqb/tgtc/backend/dictionary"
+	"github.com/radityaqb/tgtc/backend/service"
 )
 
 type Resolver struct {
@@ -55,14 +56,14 @@ func (r *Resolver) CreateBanner() graphql.FieldResolveFn {
 			Url: url,
 			Imagesrc: expired,
 			StartDate: startdate,
-			EndDate: enddate
-			MinTier: mintier
-			MaxTier: maxtier
-			MinBalance: minbalance
-			MaxBalance: maxbalance
-			MinTokopoint: mintokopoint
-			MaxTokopoint: maxtokopoint
-			isActive: isavtive
+			EndDate: enddate,
+			MinTier: mintier,
+			MaxTier: maxtier,
+			MinBalance: minbalance,
+			MaxBalance: maxbalance,
+			MinTokopoint: mintokopoint,
+			MaxTokopoint: maxtokopoint,
+			isActive: isavtive,
 		}
 		_, err := service.UpdateBanner(req)
 		if err != nil {
@@ -92,14 +93,14 @@ func (r *Resolver) UpdateBanner() graphql.FieldResolveFn {
 			Url: url,
 			Imagesrc: expired,
 			StartDate: startdate,
-			EndDate: enddate
-			MinTier: mintier
-			MaxTier: maxtier
-			MinBalance: minbalance
-			MaxBalance: maxbalance
-			MinTokopoint: mintokopoint
-			MaxTokopoint: maxtokopoint
-			isActive: isavtive
+			EndDate: enddate,
+			MinTier: mintier,
+			MaxTier: maxtier,
+			MinBalance: minbalance,
+			MaxBalance: maxbalance,
+			MinTokopoint: mintokopoint,
+			MaxTokopoint: maxtokopoint,
+			isActive: isavtive,
 		}
 		_, err := service.CreateBanner(req)
 		if err != nil {

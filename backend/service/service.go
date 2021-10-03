@@ -32,7 +32,7 @@ func GetUser(paramID int) (*dictionary.User, error) {
 		&result.Tokopoint,
 		&result.Tier,
 		&result.Location,
-		&result.BannerList
+		&result.BannerList,
 	)
 	if err != nil {
 		return nil, err
@@ -70,7 +70,7 @@ func GetUsers() ([]dictionary.User, error) {
 			&result.Tokopoint,
 			&result.Tier,
 			&result.Location,
-			&result.BannerList
+			&result.BannerList,
 		)
 		if err != nil {
 			return nil, err
@@ -113,7 +113,7 @@ func CreateUser(data dictionary.User) (*dictionary.User, error) {
 		data.Tokopoint,
 		data.Tier,
 		data.Location,
-		data.BannerList
+		data.BannerList,
 	)
 	if err != nil {
 		return nil, err
@@ -161,7 +161,7 @@ func UpdateUser(data dictionary.User) (*dictionary.User, error) {
 		data.Tokopoint,
 		data.Tier,
 		data.Location,
-		data.BannerList
+		data.BannerList,
 	)
 	if err != nil {
 		return nil, err
@@ -179,36 +179,36 @@ func UpdateUser(data dictionary.User) (*dictionary.User, error) {
 	return &data, nil
 }
 
-func DeleteUser(paramID int) (*dictionary.User, error) {
+// func DeleteUser(paramID int) (*dictionary.User, error) {
 
-	// you can connect and
-	// get current database connection
-	db := database.GetDB()
+// 	// you can connect and
+// 	// get current database connection
+// 	db := database.GetDB()
 
-	// construct query
-	query := `
-	DELETE
-	FROM user
-	WHERE user_id = $1
-	`
-	// actual query process
-	result, err := db.Exec(query, paramID)
+// 	// construct query
+// 	query := `
+// 	DELETE
+// 	FROM user
+// 	WHERE user_id = $1
+// 	`
+// 	// actual query process
+// 	result, err := db.Exec(query, paramID)
 
-	if err != nil {
-		return nil, err
-	}
+// 	if err != nil {
+// 		return nil, err
+// 	}
 
-	affected, err := result.RowsAffected()
-	if err != nil {
-		return nil, err
-	}
+// 	affected, err := result.RowsAffected()
+// 	if err != nil {
+// 		return nil, err
+// 	}
 
-	if affected == 0 {
-		return nil, errors.New("no row updated")
-	}
+// 	if affected == 0 {
+// 		return nil, errors.New("no row updated")
+// 	}
 
-	return &data, nil
-}
+// 	return &data, nil
+// }
 
 
 
@@ -251,7 +251,7 @@ func GetBanner(paramID int) (*dictionary.Banner, error) {
 	return &result, nil
 }
 
-func GetBanners() ([]dictionary.User, error) {
+func GetBanners() ([]dictionary.Banner, error) {
 
 	// you can connect and
 	// get current database connection
@@ -373,7 +373,7 @@ func UpdateBanner(data dictionary.User) (*dictionary.Banner, error) {
 	`
 	// actual query process
 	result, err := db.Exec(query,
-		data.id
+		data.id,
 		data.Name,
 		data.Url,
 		data.ImgSrc,
