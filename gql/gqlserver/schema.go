@@ -48,7 +48,7 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Get Banner by ID",
 					Args: graphql.FieldConfigArgument{
 						"id": &graphql.ArgumentConfig{
-							Type: graphql.NonNull(graphql.Int),
+							Type: graphql.Int,
 						},
 					},
 					Resolve: s.resolver.GetBanner(),
@@ -85,7 +85,7 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Create Banner",
 					Args: graphql.FieldConfigArgument{
 						"name": &graphql.ArgumentConfig{
-							Type: graphql.NonNull(graphql.String),
+							Type: graphql.String,
 						},
 						"url": &graphql.ArgumentConfig{
 							Type: graphql.String,
@@ -128,10 +128,10 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Edit Banner",
 					Args: graphql.FieldConfigArgument{
 						"name": &graphql.ArgumentConfig{
-							Type: graphql.NonNull(graphql.String),
+							Type: graphql.String,
 						},
 						"id": &graphql.ArgumentConfig{
-							Type: graphql.NonNull(graphql.Int),
+							Type: graphql.Int,
 						},
 						"url": &graphql.ArgumentConfig{
 							Type: graphql.String,
@@ -174,7 +174,7 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Delete Banner by ID",
 					Args: graphql.FieldConfigArgument{
 						"id": &graphql.ArgumentConfig{
-							Type: graphql.NonNull(graphql.Int),
+							Type: graphql.Int,
 						},
 					},
 					Resolve: s.resolver.DeleteBanner(),
