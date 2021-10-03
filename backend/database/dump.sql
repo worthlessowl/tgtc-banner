@@ -12,7 +12,6 @@ banner_mintokopoint,banner_maxtokopoint, banner_isactive) VALUES('Cashback OVO',
 INSERT INTO banner ( banner_name, banner_url, banner_imgsrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
 banner_mintokopoint,banner_maxtokopoint, banner_isactive) VALUES('Hari Skincare Indonesia', 'http://tokopediahsi.com', 'hsi.jpg', 150120, 250120,'silver','gold',300,1000000,100,100000000,0);
 
-
 CREATE TABLE IF NOT EXISTS users (user_id SERIAL PRIMARY KEY, user_name TEXT, user_email TEXT, user_balance INT, user_tokopoint INT, user_tier TEXT, user_location TEXT, user_bannerlist JSON);
 
 INSERT INTO users (user_name, user_email, user_balance, user_tokopoint, user_tier, user_location, user_bannerlist) 
@@ -29,6 +28,3 @@ INSERT INTO users (user_name, user_email, user_balance, user_tokopoint, user_tie
 
 INSERT INTO users (user_name, user_email, user_balance, user_tokopoint, user_tier, user_location, user_bannerlist) 
     VALUES('Udin', 'udinbaskara@gmail.com', 54520, 115020, 'Gold', 'Bandung', '[4]');
-
-
-
