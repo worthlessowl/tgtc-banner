@@ -100,9 +100,9 @@ func CreateUser(data dictionary.User) (*dictionary.User, error) {
 			user_location
 			user_bannerlist
 		)
-	VALUE
+	VALUES
 		(
-			$2, $3, $4, $5, $6, $7 
+			$1, $2, $3, $4, $5, $6, $7
 		)
 	`
 	// actual query process
@@ -309,9 +309,9 @@ func CreateBanner(data dictionary.Banner) (*dictionary.Banner, error) {
 		(
 			banner_name, banner_url, banner_imgsrc, banner_startdate, banner_enddate, banner_mintier, banner_maxtier, banner_minbalance, banner_maxbalance, banner_mintokopoint, banner_maxtokopoint, banner_isactive
 		)
-	VALUE
+	VALUES
 		(
-			$2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13
+			$1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12
 		)
 	`
 	// actual query process
@@ -359,17 +359,17 @@ func UpdateBanner(data dictionary.Banner) (*dictionary.Banner, error) {
 		banner_name = $2,
 		banner_url = $3,
 		banner_imgsrc = $4,
-		banner_startdate = $5
-		banner_enddate = $6
-		banner_mintier = $7
-		banner_maxtier = $8
-		banner_minbalance = $9
-		banner_maxbalance = $10
-		banner_mintokopoint = $11
-		banner_maxtokopoint = $12
+		banner_startdate = $5,
+		banner_enddate = $6,
+		banner_mintier = $7,
+		banner_maxtier = $8,
+		banner_minbalance = $9,
+		banner_maxbalance = $10,
+		banner_mintokopoint = $11,
+		banner_maxtokopoint = $12,
 		banner_isactive = $13
 	WHERE
-		product_id = $1
+		banner_id = $1
 	`
 	// actual query process
 	result, err := db.Exec(query,

@@ -71,7 +71,7 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Create Banner",
 					Args: graphql.FieldConfigArgument{
 						"name": &graphql.ArgumentConfig{
-							Type: graphql.Int,
+							Type: graphql.String,
 						},
 						"url": &graphql.ArgumentConfig{
 							Type: graphql.String,
@@ -80,10 +80,10 @@ func (s *SchemaWrapper) Init() error {
 							Type: graphql.String,
 						},
 						"startDate": &graphql.ArgumentConfig{
-							Type: graphql.String,
+							Type: graphql.Int,
 						},
 						"endDate": &graphql.ArgumentConfig{
-							Type: graphql.String,
+							Type: graphql.Int,
 						},
 						"minTier": &graphql.ArgumentConfig{
 							Type: graphql.String,
@@ -104,7 +104,7 @@ func (s *SchemaWrapper) Init() error {
 							Type: graphql.Int,
 						},
 						"isActive": &graphql.ArgumentConfig{
-							Type: graphql.Boolean,
+							Type: graphql.Int,
 						},
 					},
 					Resolve: s.resolver.CreateBanner(),
@@ -114,6 +114,9 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Edit Banner",
 					Args: graphql.FieldConfigArgument{
 						"name": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"id": &graphql.ArgumentConfig{
 							Type: graphql.Int,
 						},
 						"url": &graphql.ArgumentConfig{
@@ -123,10 +126,10 @@ func (s *SchemaWrapper) Init() error {
 							Type: graphql.String,
 						},
 						"startDate": &graphql.ArgumentConfig{
-							Type: graphql.String,
+							Type: graphql.Int,
 						},
 						"endDate": &graphql.ArgumentConfig{
-							Type: graphql.String,
+							Type: graphql.Int,
 						},
 						"minTier": &graphql.ArgumentConfig{
 							Type: graphql.String,
@@ -147,7 +150,7 @@ func (s *SchemaWrapper) Init() error {
 							Type: graphql.Int,
 						},
 						"isActive": &graphql.ArgumentConfig{
-							Type: graphql.Boolean,
+							Type: graphql.Int,
 						},
 					},
 					Resolve: s.resolver.UpdateBanner(),
