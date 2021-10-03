@@ -73,3 +73,41 @@ func (r *Resolver) DeleteBanner() graphql.FieldResolveFn {
 		return nil, err
 	}
 }
+
+func (r *Resolver) GetUser() graphql.FieldResolveFn {
+	return func(p graphql.ResolveParams) (interface{}, error) {
+		id, _ := p.Args["user_id"].(int)
+		return service.GetUser(id)
+	}
+}
+
+func (r *Resolver) GetUsers() graphql.FieldResolveFn {
+	return func(p graphql.ResolveParams) (interface{}, error) {
+		return service.GetUsers()
+	}
+}
+
+func (r *Resolver) CreateUser() graphql.FieldResolveFn {
+	return func(p graphql.ResolveParams) (interface{}, error) {
+		
+		var user dictionary.User
+		decodeErr := mapstructure.Decode(p.Args, &user)
+		if decodeErr != nil {
+			panic(decodeErr)
+		}
+		result, err := service.CreateUser(user)
+		return result, err
+	}
+}
+
+func (r *Resolver) UpdateUser() graphql.FieldResolveFn {
+	return func(p graphql.ResolveParams) (interface{}, error) {
+		var user dictionary.User
+		decodeErr := mapstructure.Decode(p.Args, &user)
+		if decodeErr != nil {
+			panic(decodeErr)
+		}
+		result, err := service.UpdateUser(user)
+		return result, err
+	}
+}

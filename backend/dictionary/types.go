@@ -1,7 +1,7 @@
 package dictionary
 
 import (
-	"time"
+	
 )
 
 type Product struct {
@@ -23,15 +23,15 @@ type Banner struct {
 	Name string `json:"name"`
 	Url string `json:"url"`
 	ImgSrc string `json:"imgSrc"`
-	StartDate time.Time `json:"startDate"`
-	EndDate time.Time `json:"endDate"`
+	StartDate int64 `json:"startDate"`
+	EndDate int64 `json:"endDate"`
 	MinTier string `json:"minTier"`
 	MaxTier string `json:"maxTier"`
 	MinBalance int64 `json:"minBalance"`
 	MaxBalance int64 `json:"maxBalance"`
 	MinTokopoint int64 `json:"minTokopoint"`
 	MaxTokopoint int64 `json:"maxTokopoint"`
-	IsActive bool `json:"isActive"`
+	IsActive int64 `json:"isActive"`
 }
 
 type User struct {

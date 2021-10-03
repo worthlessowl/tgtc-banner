@@ -61,3 +61,24 @@ var BannerType = graphql.NewObject(
 		},
 	},
 )
+
+var UserType = graphql.NewObject(
+	graphql.ObjectConfig{
+		Name:        "User",
+		Description: "Detail of the user",
+		Fields: graphql.Fields{
+			"id": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"name": &graphql.Field{
+				Type: graphql.String,
+			},
+			"location": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"tier": &graphql.Field{
+				Type: graphql.Int,
+			},
+		},
+	},
+)

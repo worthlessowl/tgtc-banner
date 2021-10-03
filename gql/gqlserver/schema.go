@@ -54,7 +54,7 @@ func (s *SchemaWrapper) Init() error {
 					Resolve: s.resolver.GetBanner(),
 				},
 				"AllBannerDetail": &graphql.Field{
-					Type: BannerType,
+					Type: graphql.NewList(BannerType),
 					Description: "Get All Banner",
 					Resolve: s.resolver.GetBanners(),
 				},
