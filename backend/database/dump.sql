@@ -1,15 +1,15 @@
-CREATE TABLE IF NOT EXISTS banner (banner_id SERIAL PRIMARY KEY, banner_name TEXT, banner_url TEXT, banner_imagesrc TEXT, banner_startdate INT,banner_enddate INT, banner_maxtier INT, banner_mintier INT,banner_minbalance INT,banner_maxbalance INT,banner_mintokopoint INT,banner_maxtokopoint INT,banner_isactive BIT);
+CREATE TABLE IF NOT EXISTS banner (banner_id SERIAL PRIMARY KEY, banner_name TEXT, banner_url TEXT, banner_imgsrc TEXT, banner_startdate INT,banner_enddate INT, banner_maxtier INT, banner_mintier INT,banner_minbalance INT,banner_maxbalance INT,banner_mintokopoint INT,banner_maxtokopoint INT,banner_isactive BIT);
 
-INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+INSERT INTO banner ( banner_name, banner_url, banner_imgsrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
 banner_mintokopoint,banner_maxtokopoint) VALUES('Waktu Indonesia Belanja', 'http://tokopedia.com', 'wib.jpg', 250120, 300120,'silver','gold',10,1000000,1,100000000);
 
-INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+INSERT INTO banner ( banner_name, banner_url, banner_imgsrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
 banner_mintokopoint,banner_maxtokopoint) VALUES('Cashback Barang Elektronik', 'http://tokopediaelek.com', 'kom.jpg', 130120, 300120,'silver','gold',300,1000000,100,100000000);
 
-INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+INSERT INTO banner ( banner_name, banner_url, banner_imgsrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
 banner_mintokopoint,banner_maxtokopoint) VALUES('Cashback OVO', 'http://tokopediaovo.com', 'ovo.jpg', 150120, 200120,'silver','gold',300,1000000,100,100000000);
 
-INSERT INTO banner ( banner_name, banner_url, banner_imagesrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
+INSERT INTO banner ( banner_name, banner_url, banner_imgsrc, banner_startdate,banner_enddate, banner_maxtier, banner_mintier,banner_minbalance ,banner_maxbalance,
 banner_mintokopoint,banner_maxtokopoint) VALUES('Hari Skincare Indonesia', 'http://tokopediahsi.com', 'hsi.jpg', 150120, 250120,'silver','gold',300,1000000,100,100000000);
 
 
