@@ -58,7 +58,21 @@ func (s *SchemaWrapper) Init() error {
 					Description: "Get All Banner",
 					Resolve: s.resolver.GetBanners(),
 				},
-				
+				"AllUser": &graphql.Field{
+					Type: graphql.NewList(UserType),
+					Description: "Get All User",
+					Resolve: s.resolver.GetUsers(),
+				},
+				"UserDetail": &graphql.Field{
+					Type: UserType,
+					Description: "Get User by ID",
+					Args: graphql.FieldConfigArgument{
+						"id": &graphql.ArgumentConfig{
+							Type: graphql.Int,
+						},
+					},
+					Resolve: s.resolver.GetUser(),
+				},
 			},
 		}),
 
@@ -165,8 +179,77 @@ func (s *SchemaWrapper) Init() error {
 					},
 					Resolve: s.resolver.DeleteBanner(),
 				},
+				"CreateUser": &graphql.Field{
+					Type: UserType,
+					Description: "Create User",
+					Args: graphql.FieldConfigArgument{
+						"name": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"email": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"balance": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"tokopoint": &graphql.ArgumentConfig{
+							Type: graphql.Int,
+						},
+						"tier": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"location": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"bannerList": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+					},
+					Resolve: s.resolver.CreateUser(),
+				},
+				"EditUser": &graphql.Field{
+					Type: UserType,
+					Description: "Edit User",
+					Args: graphql.FieldConfigArgument{
+						"id": &graphql.ArgumentConfig{
+							Type: graphql.Int,
+						},
+						"name": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"email": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"balance": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"tokopoint": &graphql.ArgumentConfig{
+							Type: graphql.Int,
+						},
+						"tier": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"location": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+						"bannerList": &graphql.ArgumentConfig{
+							Type: graphql.String,
+						},
+					},
+					Resolve: s.resolver.UpdateUser(),
+				},
+				"DeleteUser": &graphql.Field{
+					Type: UserType,
+					Description: "Delete User by ID",
+					Args: graphql.FieldConfigArgument{
+						"id": &graphql.ArgumentConfig{
+							Type: graphql.Int,
+						},
+					},
+					Resolve: s.resolver.DeleteUser(),
+				},
 			},
-			
+
 		}),
 	})
 

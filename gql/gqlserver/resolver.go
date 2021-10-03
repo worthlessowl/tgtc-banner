@@ -76,7 +76,7 @@ func (r *Resolver) DeleteBanner() graphql.FieldResolveFn {
 
 func (r *Resolver) GetUser() graphql.FieldResolveFn {
 	return func(p graphql.ResolveParams) (interface{}, error) {
-		id, _ := p.Args["user_id"].(int)
+		id, _ := p.Args["id"].(int)
 		return service.GetUser(id)
 	}
 }
@@ -109,5 +109,14 @@ func (r *Resolver) UpdateUser() graphql.FieldResolveFn {
 		}
 		result, err := service.UpdateUser(user)
 		return result, err
+	}
+}
+
+func (r *Resolver) DeleteUser() graphql.FieldResolveFn {
+	return func(p graphql.ResolveParams) (interface{}, error) {
+		id, _ := p.Args["id"].(int)
+
+		err := service.DeleteUser(id)
+		return nil, err
 	}
 }

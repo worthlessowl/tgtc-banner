@@ -70,7 +70,7 @@ func GetUsers() ([]dictionary.User, error) {
 			&data.Tokopoint,
 			&data.Tier,
 			&data.Location,
-			&data.BannerList,
+			&data.BannerList,	
 		)
 		if err != nil {
 			return nil, err

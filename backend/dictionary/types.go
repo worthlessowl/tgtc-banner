@@ -42,5 +42,5 @@ type User struct {
 	Tokopoint int64 `json:"tokopoint"`
 	Tier string `json:"tier"`
 	Location string `json:"email"`
-	BannerList []Banner `json:"banner"`
+	BannerList string `json:"banner"`
 }

@@ -73,11 +73,23 @@ var UserType = graphql.NewObject(
 			"name": &graphql.Field{
 				Type: graphql.String,
 			},
-			"location": &graphql.Field{
+			"email": &graphql.Field{
+				Type: graphql.String,
+			},
+			"balance": &graphql.Field{
+				Type: graphql.String,
+			},
+			"tokopoint": &graphql.Field{
 				Type: graphql.Int,
 			},
 			"tier": &graphql.Field{
-				Type: graphql.Int,
+				Type: graphql.String,
+			},
+			"location": &graphql.Field{
+				Type: graphql.String,
+			},
+			"bannerList": &graphql.Field{
+				Type: graphql.String,
 			},
 		},
 	},
