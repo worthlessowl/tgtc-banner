@@ -6,16 +6,19 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/radityaqb/tgtc/backend/server"
-	"github.com/radityaqb/tgtc/gql/gqlserver"
+	"github.com/worthlessowl/tgtc-banner/backend/server"
+	"github.com/worthlessowl/tgtc-banner/gql/gqlserver"
+	"github.com/worthlessowl/tgtc-banner/backend/database"
 )
 
 func main() {
+	database.InitDB()
+
 	router := mux.NewRouter()
 
 	pResolver := gqlserver.NewResolver()
 	schemaWrapper := gqlserver.NewSchemaWrapper().
-		WithProductResolver(pResolver)
+		WithResolver(pResolver)
 
 	if err := schemaWrapper.Init(); err != nil {
 		log.Fatal("unable to parse schema, err: ", err.Error())

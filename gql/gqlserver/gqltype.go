@@ -17,7 +17,7 @@ var ProductType = graphql.NewObject(
 var BannerType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name:		"Banner",
-		Description:"Banner for user"
+		Description:"Banner for user",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
 				Type: graphql.Int,
@@ -58,6 +58,6 @@ var BannerType = graphql.NewObject(
 			"isactive": &graphql.Field{
 				Type: graphql.Boolean,
 			},
-		}
-	}
+		},
+	},
 )

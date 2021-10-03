@@ -7,12 +7,13 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/worthlessowl/tgtc-banner/backend/handlers"
 	"github.com/worthlessowl/tgtc-banner/backend/server"
+	"github.com/worthlessowl/tgtc-banner/backend/database"
 )
 
 func main() {
 
 	// Init database connection
-	// database.InitDB()
+	database.InitDB()
 
 	// Init serve HTTP
 	router := mux.NewRouter()

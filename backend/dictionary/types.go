@@ -31,7 +31,7 @@ type Banner struct {
 	MaxBalance int64 `json:"maxBalance"`
 	MinTokopoint int64 `json:"minTokopoint"`
 	MaxTokopoint int64 `json:"maxTokopoint"`
-	isActive bool `json:"isActive"`
+	IsActive bool `json:"isActive"`
 }
 
 type User struct {

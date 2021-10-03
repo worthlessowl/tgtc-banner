@@ -57,9 +57,9 @@ func (s *SchemaWrapper) Init() error {
 					Type: BannerType,
 					Description: "Get All Banner",
 					Resolve: s.resolver.GetBanners(),
-				}
+				},
 				
-			}
+			},
 		}),
 
 		Mutation: graphql.NewObject(graphql.ObjectConfig{
